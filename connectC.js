@@ -43,10 +43,10 @@
             // Iterate over the JSON object
             for (var i = 0, len = feat.length; i < len; i++) {
                 tableData.push({
-                    "id": feat[i].I_was_satisfied_with_the_level_of_support_received_from_my_manager,
-                    "mag": feat[i].What_could_we_have_done_differently_to_have_encouraged_you_to_stay_at_easyJet_,
-                    "title": feat[i].lastName,
-                    "location": feat[i].I_was_rewarded_fairly_for_my_role
+                    "I_was_satisfied_with_the_level_of_support_received_from_my_manager": feat[i].I_was_satisfied_with_the_level_of_support_received_from_my_manager,
+                    "What_could_we_have_done_differently_to_have_encouraged_you_to_stay_at_easyJet_": feat[i].What_could_we_have_done_differently_to_have_encouraged_you_to_stay_at_easyJet_,
+                    "lastName": feat[i].lastName,
+                    "I_was_rewarded_fairly_for_my_role": feat[i].I_was_rewarded_fairly_for_my_role
                 });
             }
             // add the data 
