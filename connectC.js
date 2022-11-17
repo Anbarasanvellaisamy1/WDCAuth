@@ -1,7 +1,16 @@
 (function() {
     // Create the connector object
     var myConnector = tableau.makeConnector();
+    
+    tableau.username = 'ISU_Tableau_Webservice'
+    tableau.password = 'hXlTee0eZSfGL$Me'    
 
+	// Init function for connector, called during every phase
+    myConnector.init = function(initCallback) {
+    tableau.authType = tableau.authTypeEnum.basic;
+    initCallback();
+    }
+	
     // Define the schema
     myConnector.getSchema = function(schemaCallback) {
         var cols = [{
@@ -31,11 +40,7 @@
 	
     // Download the data
     myConnector.getData = function(table, doneCallback) {
-	$.ajaxSetup({
-            headers: {
-                "Authorization": "Basic SVNVX1RhYmxlYXVfV2Vic2VydmljZTpoWGxUZWUwZVpTZkdMJE1l"
-            }
-        });
+	
         $.getJSON("https://wd3-impl-services1.workday.com/ccx/service/customreport2/easyjet2/ISU_Tableau_Webservice/EJ_-_Exit_Interview_Questionnaire_Extract_-_RaaS_Test?format=json", function(resp) {
             var feat = resp.features,
                 tableData = [];
